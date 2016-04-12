@@ -1,0 +1,43 @@
+<!-- <div>This is the games view.</div> -->
+<!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
+<div class="col-md-12">
+  <h1>Games</h1>
+  <table class="table table-striped">
+    <thead>
+      <th>Name</th>
+      <th>Platform</th>
+      <th>Genre</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="game in games">
+        <td ng-hide="game.edit">{{game.name}}</td>
+        <td ng-show="game.edit"><input type="text" ng-model="game.name"></td>
+        
+        <td ng-hide="game.edit"><a href="" ng-click="filterByPlatform(game.platform)">{{game.platform}}</a></td>
+        <td ng-show="game.edit"><input type="text" ng-model="game.platform"></td>
+        
+        <td ng-hide="game.edit"><a href="" ng-click="filterByGenre(game.genre)">{{game.genre}}</a></td>
+        <td ng-show="game.edit"><input type="text" ng-model="game.genre"></td>  
+          
+        <td ng-hide="game.edit">
+          <button class="btn btn-success" ng-click="toggleEdit($index)">Edit</button>
+          <button class="btn btn-danger" ng-click="deleteGame($index)">Delete</button>
+        </td>
+          
+        <td ng-show="game.edit">
+          <button class="btn btn-primary" ng-click="saveGame($index)">Save</button>
+          <button class="btn btn-danger" ng-click="toggleEdit($index)">Cancel</button>
+        </td>
+      </tr>
+    </tbody>
+    <tr>
+      <td><input type="text" ng-model="newGame.name"></td>
+      <td><input type="text" ng-model="newGame.platform"></td>
+      <td><input type="text" ng-model="newGame.genre"></td>
+      <td>
+        <button class="btn btn-primary" ng-click="addNewGame()">Add New</button>
+      </td>
+    </tr>
+  </table>
+</div>
