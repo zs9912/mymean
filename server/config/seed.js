@@ -21,6 +21,14 @@ Game.find({}).remove()
       name: 'Super Smash Bros',
       platform: 'Wii U',
       genre: 'Fighting'
+    },{
+      name : 'Pokemon X',
+      platform : '3DS',
+      genre: 'Role-Playing'
+    },{
+      name : 'Halo 4',
+      platform : 'Xbox 360',
+      genre: 'Shooter'
     });
   });
 
